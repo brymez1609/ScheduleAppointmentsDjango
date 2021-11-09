@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block container %}
+
+<div class="container">
+    <div class="row" style="padding-top:200px">
+        <div class="col s5 offset-s4 center">
+            <div class="card teal lighten-5 card-login">            
+                <div class="card-content">
+                    <span class="card-title center flow-text">Log In</span>
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="input-field">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="username" type="text" name="username" class="validate">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">security</i>
+                            <input id="password" type="password" name="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                        <a href="#!">Forgot Password?</a>
+                        <br><br>
+                        {% if error %}
+                            <p>{{error}}</p>
+                        {% endif %}
+                        <div>
+                            <input class="btn right" type="submit" value="Log In">                
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock container %}

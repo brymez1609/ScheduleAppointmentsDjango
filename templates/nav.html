@@ -1,0 +1,18 @@
+<nav class="cyan darken-4">
+    <div class="nav-wrapper">
+      <a href="{% url 'index' %}" class="brand-logo">Welcome User</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'list_patients' %}">Patients</a></li>
+        <li><a href="badges.html">Physicians</a></li>
+        <li><a href="collapsible.html">Schedule</a></li> 
+        <li><a href={% url 'logout' %}>Log out</a></li>        
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Patients</a></li>
+    <li><a href="badges.html">Physicians</a></li>
+    <li><a href="{% url 'logout' %}">Schedule</a></li>
+  </ul>

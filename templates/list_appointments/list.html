@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block container %}
+    
+    <form action="POST" id="form_custom_settings">                    
+        <div class="row">
+            <div class="input-field col s6">
+                <select name="id_secction">
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for section in sections %}
+                        <option value="{{ section.0 }}">{{section.1}}</option>
+                    {% endfor %}                                                
+                </select>
+                <label>Sections</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input name="label_one" id="label_one" type="text" class="validate">
+                <label for="label_one">Label one</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input name="label_two" id="label_two" type="text" class="validate">
+                <label for="label_two">Label two</label>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="file-field input-field col s6">
+                <div class="btn">
+                    <span>File</span>
+                    <input name="photo" type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input  name="photo" class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+        <a id="btn_save_form">Save</a>
+    </form>        
+<!-- index js -->
+<script src="{% static "js/list.js" %}"></script>
+{% endblock container %}
